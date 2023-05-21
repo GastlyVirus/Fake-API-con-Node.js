@@ -1,0 +1,80 @@
+<!-- // Cómo Crear una Fake API REST en Node JS con JSON Server // -->
+// Que es Fake API REST?
+Fake API REST se refiere a una API (Application Programming Interface) simulada o falsa que imita el comportamiento de una API REST real, pero no proporciona datos reales ni realiza ninguna acción real en el backend. Se utiliza comúnmente en el desarrollo de software para simular el comportamiento de una API real antes de que esta esté disponible o para realizar pruebas sin afectar los datos o la funcionalidad real.
+
+Las Fake APIs REST permiten a los desarrolladores probar y validar el funcionamiento de su aplicación, incluso cuando la API real aún no está implementada o no está disponible temporalmente. Estas API falsas pueden proporcionar respuestas predefinidas y simuladas para las solicitudes HTTP, lo que permite a los desarrolladores probar diferentes escenarios y casos de uso.
+
+Algunas herramientas populares para crear Fake APIs REST incluyen json-server, Postman Mock Server, WireMock y Mirage.js. Estas herramientas proporcionan una forma sencilla de definir y simular rutas, endpoints y respuestas falsas que imitan el comportamiento de una API REST real.
+
+En resumen, una Fake API REST es una simulación de una API real que se utiliza para pruebas o desarrollo de software cuando la API real no está disponible o se desea evitar interactuar con datos y funcionalidades reales.
+
+
+
+// Que es json-server? --- https://github.com/typicode/json-server ---
+JSON Server es una herramienta que permite crear rápidamente una API REST simulada a partir de un archivo JSON. Proporciona una forma sencilla de definir rutas y endpoints utilizando un archivo JSON como fuente de datos. Es ampliamente utilizado para desarrollar prototipos rápidos, realizar pruebas y simular una API REST antes de que la implementación real esté disponible.
+
+Con JSON Server, puedes crear una API REST completa con operaciones CRUD (Create, Read, Update, Delete) utilizando solo unos pocos comandos. Solo necesitas tener un archivo JSON que contenga los datos que deseas simular y JSON Server se encargará del resto.
+
+Al ejecutar JSON Server, este crea automáticamente una API REST simulada con rutas y endpoints basados en la estructura del archivo JSON. Puedes acceder y manipular los datos utilizando las operaciones HTTP estándar, como GET, POST, PUT y DELETE.
+
+Aquí hay un ejemplo de cómo se vería un archivo JSON simple llamado "db.json" que contiene una lista de usuarios:
+
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "edad": 25
+    },
+    {
+      "id": 2,
+      "nombre": "María",
+      "edad": 30
+    }
+  ]
+}
+
+Al ejecutar JSON Server en el directorio donde se encuentra el archivo "db.json" con el siguiente comando:
+
+json-server --watch db.json
+
+JSON Server creará una API REST simulada con rutas como /usuarios que puedes utilizar para realizar solicitudes HTTP y manipular los datos.
+
+En resumen, JSON Server es una herramienta que simplifica la creación de una API REST simulada utilizando un archivo JSON como fuente de datos. Es útil para el desarrollo rápido de prototipos y pruebas antes de tener una API REST real.
+
+
+
+// Que es MD5 en contraseñas?
+MD5 (Message Digest Algorithm 5) es un algoritmo de hash ampliamente utilizado para calcular un valor hash único y fijo de longitud fija para una cadena de texto, como una contraseña. El objetivo principal de MD5 en el contexto de las contraseñas es proporcionar una forma de verificar la integridad de una contraseña sin almacenarla directamente.
+
+Cuando un usuario crea una contraseña, la contraseña original se somete al algoritmo MD5, que genera un hash único para esa contraseña. El hash resultante se almacena en lugar de la contraseña original. Cuando el usuario intenta iniciar sesión nuevamente, la contraseña proporcionada se vuelve a calcular utilizando MD5 y se compara con el hash almacenado en la base de datos.
+
+Es importante destacar que MD5 se considera ahora un algoritmo de hash inseguro para almacenar contraseñas debido a su vulnerabilidad a los ataques de fuerza bruta y a las técnicas modernas de criptoanálisis. Además, MD5 es susceptible a colisiones, lo que significa que dos contraseñas diferentes podrían generar el mismo hash.
+
+Por esta razón, se recomienda encarecidamente utilizar algoritmos más seguros y resistentes, como bcrypt, scrypt o Argon2, que están diseñados específicamente para almacenar contraseñas de forma segura y son más difíciles de romper mediante ataques de fuerza bruta o precomputación de hashes.
+
+En resumen, MD5 es un algoritmo de hash utilizado para calcular un valor único y fijo de longitud fija para una cadena de texto, como una contraseña. Sin embargo, debido a sus debilidades de seguridad, no se recomienda utilizar MD5 para almacenar contraseñas en aplicaciones modernas.
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+1- Se crea una carpeta donde se guardara el proyecto
+2- Se escriben los comandos para crear una aplicacion en NODE.JS:
+   npm init -y
+
+3- Para crear la FAKE API, utilizaremos json-server, se procede a instalar ese paquete:
+   npm i json-server
+
+4- Se abre el visual studio code para editar
+5- Se crea un archivo de nombre db.json
+6- Para facilitar la ejecucion de la API, en el archivo "package.json", se crea el script start
+   "start": "json-server --watch db.json --port 3001" (quiere decir que lea el archivo db.json y tambien que el puerto para el localhost sea el 3001)
+
+7- En el archivo "db.json" se inicia con llaves {}, dentro de las llaves se escribe el nombre de la table y los objetos
+8- Una vez realizada dicha lista, se escribe en la terminal el comando "npm start" para inicializar la fake API
+9- Para realizar las pruebas a la API, abrimos el POSTMAN y realizamos las peticiones necesarias
+
+*Convertir el password en MD5

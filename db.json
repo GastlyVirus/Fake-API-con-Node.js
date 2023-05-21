@@ -1,0 +1,55 @@
+{
+  "navegadores": [
+    {
+      "id": 1,
+      "nombre": "Google Chrome",
+      "porcentaje": "57,4%"
+    },
+    {
+      "id": 2,
+      "nombre": "Safari",
+      "porcentaje": "13,5%"
+    },
+    {
+      "id": 3,
+      "nombre": "Internet Explorer",
+      "porcentaje": "6,8%"
+    },
+    {
+      "id": 4,
+      "nombre": "Mozilla Firefox",
+      "porcentaje": "6,5%"
+    },
+    {
+      "id": 5,
+      "nombre": "Opera",
+      "porcentaje": "3,2%"
+    },
+    {
+      "id": 6,
+      "nombre": "Otros",
+      "porcentaje": "12,6%"
+    },
+    {
+      "nombre": "Torch",
+      "porcentaje": "0,2%",
+      "id": 7
+    }
+  ],
+  "usuarios": [
+    {
+        "id": 1,
+        "username": "GastlyVirus",
+        "nombre": "Gaston",
+        "apellido": "Rocha",
+        "contraseña": "25d55ad283aa400af464c76d713c07ad" 
+    },
+    {
+        "id": 2,
+        "username": "PopiLatina",
+        "nombre": "Sofia",
+        "apellido": "Avellaneda",
+        "contraseña": "5e8667a439c68f5145dd2fcbecf02209"
+    }
+  ]
+}
